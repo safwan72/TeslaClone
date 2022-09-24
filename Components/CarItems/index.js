@@ -3,28 +3,27 @@ import React from "react";
 import styles from "./style";
 import StyledButton from "../StyledButton";
 
-const CarItem = () => {
+const CarItem = (props) => {
+  const { name, tagline, image } = props.car;
   return (
     <View style={styles.carContainer}>
-      <ImageBackground
-        source={require("../../TeslaAssets/assets/images/ModelX.jpeg")}
-        resizeMode="cover"
-        style={styles.image}
-      />
+      <ImageBackground source={image} resizeMode="cover" style={styles.image} />
       <View style={styles.titles}>
-        <Text style={styles.title}>Model S</Text>
-        <Text style={styles.subTitle}>Starting at $69,400</Text>
+        <Text style={styles.title}>{name}</Text>
+        <Text style={styles.subTitle}>{tagline}</Text>
       </View>
-      <StyledButton
-        type="Primary"
-        content={"Custom Order"}
-        onPress={() => console.warn("Custom Order")}
-      />
-      <StyledButton
-        type="Secondary"
-        content={"Existing Inventory"}
-        onPress={() => console.warn("Existing Inventory")}
-      />
+      <View style={styles.buttonContainer}>
+        <StyledButton
+          type="Primary"
+          content={"Custom Order"}
+          onPress={() => console.warn("Custom Order")}
+        />
+        <StyledButton
+          type="Secondary"
+          content={"Existing Inventory"}
+          onPress={() => console.warn("Existing Inventory")}
+        />
+      </View>
     </View>
   );
 };

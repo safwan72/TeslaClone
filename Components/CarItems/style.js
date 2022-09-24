@@ -1,13 +1,13 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, Dimensions } from "react-native";
 
 const styles = StyleSheet.create({
   carContainer: {
     width: "100%",
-    height: "100%",
+    height: Dimensions.get("window").height,
   },
   titles: {
     width: "100%",
-    marginTop: "20%",
+    paddingTop: "20%",
     alignItems: "center",
   },
   title: {
@@ -21,6 +21,11 @@ const styles = StyleSheet.create({
   image: {
     width: "100%",
     height: "100%",
+    position: "absolute",
+  },
+  buttonContainer: {
+    width: "100%",
+    bottom: 30,
     position: "absolute",
   },
 });
